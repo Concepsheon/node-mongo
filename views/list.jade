@@ -1,0 +1,9 @@
+doctype html
+html(lang="en")
+  head
+    title= "Upcoming 2016 Movies"
+  body
+    h1 Upcoming 2016 Movies
+    ul
+      for movie in movies
+        li #[a(href='http://www.imdb.com/title/#{movie.imdb}') #{movie.title}] #[p=movie.plot]
