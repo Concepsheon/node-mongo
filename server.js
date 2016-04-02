@@ -2,8 +2,8 @@ var express = require('express');
 var MongoClient = require('mongodb').MongoClient;
 var assert = require('assert');
 
-var hostname = process.env.IP;
-var port = process.env.PORT;
+var hostname = 'localhost';
+var port = 3000;
 
 var app = express();
 app.set('view engine', 'jade');
@@ -22,5 +22,5 @@ MongoClient.connect('mongodb://localhost:27017/movies', function(err, db){
 });
 
 app.listen(port, hostname, function(){
-  console.log(`Server running at http:// ${hostname}:${port}`);
+  console.log(`Server running at http://${hostname}:${port}/`);
 });
